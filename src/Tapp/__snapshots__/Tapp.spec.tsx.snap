@@ -4,7 +4,9 @@ exports[`[Component]: Tapp should match snapshot 1`] = `
 <div
   className="tu-container tapp tu-elevation-1"
 >
-  This is a tiny app using hook 
-  HOOK
+  <canvas
+    height={200}
+    width={360}
+  />
 </div>
 `;
