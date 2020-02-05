@@ -1,14 +1,14 @@
 {
-  "name": "@tapps-io/tapp",
+  "name": "@tapps-io/tapp.color-contrast",
   "version": "0.0.0",
-  "private": true,
+  "private": false,
   "keywords": [
     "trutoo",
     "tapp",
     "tiny app",
     "fragment"
   ],
-  "description": "Base tapp to build upon.",
+  "description": "Color contrast checker using alternative methods",
   "author": {
     "name": "Trutoo AB",
     "url": "https://www.trutoo.com/"
