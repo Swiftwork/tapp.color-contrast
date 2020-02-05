@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
+import { Container } from '@trutoo/ui-core';
+
 import s from './Tapp.module.css';
 
 import basicSchema from 'schema/basic-event.json';
 import { BasicEvent } from 'schema/basic-event';
 
-import { Container } from '@trutoo/ui-core';
+import { ColorPicker } from './components/ColorPicker/ColorPicker';
 
 interface TappConfig {
   repeat?: number;
@@ -63,7 +65,7 @@ export class Tapp extends Component<Props> {
   render() {
     return (
       <Container className={`${s.tapp} tu-elevation-1`}>
-        This is a tiny app using hook {Tapp.UpperCase(this.props.name).repeat(this.props.config.repeat || 1)}
+        <ColorPicker />
       </Container>
     );
   }
