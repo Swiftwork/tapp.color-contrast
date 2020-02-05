@@ -43,7 +43,8 @@ jobs:
       - name: Build and publish tapp to GitHub Packages and GitHub Release
         run: npm run release
         env:
-          NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Used for npm publish through semantic release
+          NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Used to verify access through semantic release
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Used for npm publish
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Used for github release through semantic release
 
       - name: Deploy documentation package to GitHub Wiki
