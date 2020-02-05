@@ -1,0 +1,52 @@
+name: Continuous Delivery
+
+on:
+  push:
+    branches:
+      - master
+      - release/*
+
+jobs:
+  delivery:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out source code
+        uses: actions/checkout@v2-beta
+        with:
+          fetch-depth: 0
+
+      - name: Set global git user and email
+        run: |
+          git config --global user.name "GitHub Action"
+          git config --global user.email "action@github.com"
+
+      - name: Set up Node.js version 13.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 13.x
+          registry-url: https://npm.pkg.github.com
+          scope: tapps-io
+
+      - name: Append removed .npmrc settings
+        run: |
+          echo "@trutoo:registry=https://npm.pkg.github.com/trutoo" >> ${NPM_CONFIG_USERCONFIG}
+
+      - name: Install dependencies using CI
+        run: npm ci
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Run tests on tapp
+        run: npm test
+
+      - name: Build and publish tapp to GitHub Packages and GitHub Release
+        run: npm run release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Deploy documentation package to GitHub Wiki
+        run: npm run wiki -- -v
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

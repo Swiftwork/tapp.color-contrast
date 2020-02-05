@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[Component]: Tapp should match snapshot 1`] = `
+<div
+  className="tu-container tapp tu-elevation-1"
+>
+  This is a tiny app using hook 
+  HOOK
+</div>
+`;
