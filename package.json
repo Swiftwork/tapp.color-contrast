@@ -11,7 +11,7 @@
   "description": "Color contrast checker using alternative methods",
   "author": {
     "name": "Trutoo AB",
-    "url": "https://www.trutoo.com/"
+    "url": "https://trutoo.com/"
   },
   "license": "GPL-3.0",
   "contributors": [
@@ -21,6 +21,8 @@
       "url": "https://github.com/swiftwork"
     }
   ],
+  "repository": "https://github.com/tapps-io/tapp.color-contrast",
+  "bugs": "https://github.com/tapps-io/tapp.color-contrast/issues",
   "browser": "dist/main.js",
   "render": "dist/main.html",
   "styles": "dist/main.css",
