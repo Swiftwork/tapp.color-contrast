@@ -64,9 +64,9 @@ export class Tapp extends Component<Props> {
    */
   render() {
     return (
-      <Container className={`${s.tapp} tu-elevation-1`}>
+      <div className={`${s.tapp}`}>
         <ColorPicker />
-      </Container>
+      </div>
     );
   }
 }
