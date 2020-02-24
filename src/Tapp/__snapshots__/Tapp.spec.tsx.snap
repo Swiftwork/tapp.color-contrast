@@ -2,7 +2,7 @@
 
 exports[`[Component]: Tapp should match snapshot 1`] = `
 <div
-  className="tu-container tapp tu-elevation-1"
+  className="tapp"
 >
   <canvas
     height={200}
